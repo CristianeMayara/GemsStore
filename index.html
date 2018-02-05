@@ -54,7 +54,15 @@
           </div>
           <div class="card" ng-show="panel.isSelected(3)">
             <h4>Reviews</h4>
-            <blockquotep>Not yet</blockquote>
+            <blockquote class="blockquote mb-0 card-body" ng-repeat="review in product.reviews">
+              <p>Stars: {{review.stars}}</p>
+              {{review.body}}
+              <footer class="blockquote-footer">
+                <small class="text-muted">
+                  <cite>by: {{review.author}}</cite>
+                </small>
+              </footer>
+            </blockquote>
           </div>
         </div>
       </section>

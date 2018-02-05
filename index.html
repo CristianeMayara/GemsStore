@@ -13,14 +13,21 @@
   <title>Hello, world!</title>
 </head>
 
-<body ng-controller="StoreController as store">
+<body class="container" ng-controller="StoreController as store">
 
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="product in store.products">
-      <h3>
+  <div class="text-center">
+    <h1>Flatlander Crafted Gems</h1>
+    <h1>- an Angular store -</h1>
+  </div>
+
+  <ul class="list-group text-center mt-5">
+    <li class="list-group-item card col-12" ng-repeat="product in store.products">
+      <h3 class="text-left">
         {{product.name}}
-        <em class="pull-right">{{product.price | currency}}</em>
-        <img ng-src="{{product.images[0].full}}" height="100" width="100" />
+        <em class="float-right">{{product.price | currency}}</em>
+        <div class="text-center mt-3">
+          <img ng-src="{{product.images[0].full}}" height="100" width="100" />
+        </div>
       </h3>
     </li>
   </ul>

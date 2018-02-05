@@ -48,12 +48,15 @@
             <h4>Description</h4>
             <p>{{product.description}}</p>
           </div>
+
           <div class="card" ng-show="panel.isSelected(2)">
             <h4>Specifications</h4>
             <blockquote>Not yet</blockquote>
           </div>
+
           <div class="card" ng-show="panel.isSelected(3)">
             <h4>Reviews</h4>
+
             <blockquote class="blockquote mb-0 card-body" ng-repeat="review in product.reviews">
               <p>Stars: {{review.stars}}</p>
               {{review.body}}
@@ -63,6 +66,23 @@
                 </small>
               </footer>
             </blockquote>
+
+            <form name="reviewForm">
+              <p>Submit a Review</p>
+              <div class="container form-group">
+                <select class="form-control" ng-model="review.stars">
+                  <option value="1">1 stars</option>
+                  <option value="2">2 stars</option>
+                  <option value="3">3 stars</option>
+                  <option value="4">4 stars</option>
+                  <option value="5">5 stars</option>
+                </select>
+                <textarea class="form-control mt-2" ng-model="review.body" cols="30" rows="3"></textarea>
+                <label class="float-left">by:</label>
+                <input class="form-control" ng-model="review.author" type="email">
+                <input class="btn btn-outline-primary mt-2 mb-2 float-right" type="submit" value="Submit">
+              </div>
+            </form>
           </div>
         </div>
       </section>

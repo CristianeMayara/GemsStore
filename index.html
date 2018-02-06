@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-
+    
   <title>Hello, world!</title>
 </head>
 
@@ -69,10 +69,11 @@
               </footer>
             </blockquote>
 
-            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"
+              novalidate>
               <p>Submit a Review</p>
               <div class="container form-group">
-                <select class="form-control" ng-model="reviewCtrl.review.stars">
+                <select class="form-control" ng-model="reviewCtrl.review.stars" required>
                   <option value="1">1 stars</option>
                   <option value="2">2 stars</option>
                   <option value="3">3 stars</option>
@@ -80,10 +81,12 @@
                   <option value="5">5 stars</option>
                 </select>
 
-                <textarea class="form-control mt-2" ng-model="reviewCtrl.review.body" cols="30" rows="3"></textarea>
+                <textarea name="body" class="form-control mt-2" ng-model="reviewCtrl.review.body" cols="30" rows="3" required></textarea>
                 <label class="float-left">by:</label>
-                <input class="form-control" ng-model="reviewCtrl.review.author" type="email">
+                <input id="author" name="author" class="form-control" ng-model="reviewCtrl.review.author" type="email" ng-class="{'border-success': reviewForm.author.$valid, 'border-danger': reviewForm.author.$invalid && reviewForm.author.$dirty}"
+                  required>
                 <input class="btn btn-outline-primary mt-2 mb-2 float-right" type="submit" value="Submit">
+                <div> reviewForm is {{reviewForm.$valid}}</div>
               </div>
             </form>
           </div>

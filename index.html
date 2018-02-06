@@ -57,29 +57,29 @@
           <div class="card" ng-show="panel.isSelected(3)">
             <h4>Reviews</h4>
 
-            <blockquote class="blockquote mb-0 card-body" ng-repeat="review in product.reviews">
-              <p>Stars: {{review.stars}}</p>
-              {{review.body}}
-              <footer class="blockquote-footer">
-                <small class="text-muted">
-                  <cite>by: {{review.author}}</cite>
-                </small>
-              </footer>
-            </blockquote>
-
-            <form name="reviewForm">
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+              <blockquote class="blockquote mb-0 card-body" ng-repeat="review in product.reviews">
+                <p>Stars: {{reviewCtrl.review.stars}}</p>
+                {{reviewCtrl.review.body}}
+                <footer class="blockquote-footer">
+                  <small class="text-muted">
+                    <cite>by: {{reviewCtrl.review.author}}</cite>
+                  </small>
+                </footer>
+              </blockquote>
+              
               <p>Submit a Review</p>
               <div class="container form-group">
-                <select class="form-control" ng-model="review.stars">
+                <select class="form-control" ng-model="reviewCtrl.review.stars">
                   <option value="1">1 stars</option>
                   <option value="2">2 stars</option>
                   <option value="3">3 stars</option>
                   <option value="4">4 stars</option>
                   <option value="5">5 stars</option>
                 </select>
-                <textarea class="form-control mt-2" ng-model="review.body" cols="30" rows="3"></textarea>
+                <textarea class="form-control mt-2" ng-model="reviewCtrl.review.body" cols="30" rows="3"></textarea>
                 <label class="float-left">by:</label>
-                <input class="form-control" ng-model="review.author" type="email">
+                <input class="form-control" ng-model="reviewCtrl.review.author" type="email">
                 <input class="btn btn-outline-primary mt-2 mb-2 float-right" type="submit" value="Submit">
               </div>
             </form>

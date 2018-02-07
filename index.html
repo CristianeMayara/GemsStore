@@ -22,13 +22,8 @@
 
   <ul class="list-group text-center mt-5">
     <li class="list-group-item card col-12" ng-repeat="product in store.products">
-      <h3 class="text-left">
-        {{product.name}}
-        <em class="float-right">{{product.price | currency}}</em>
-        <div class="text-center mt-3">
-          <img ng-src="{{product.images[0].full}}" height="100" width="100" />
-        </div>
-      </h3>
+
+      <product-title></product-title>
 
       <section ng-controller="PanelController as panel">
         <ul class="nav nav-pills">
@@ -86,7 +81,6 @@
                 <input id="author" name="author" class="form-control" ng-model="reviewCtrl.review.author" type="email" ng-class="{'border-success': reviewForm.author.$valid, 'border-danger': reviewForm.author.$invalid && reviewForm.author.$dirty}"
                   required>
                 <input class="btn btn-outline-primary mt-2 mb-2 float-right" type="submit" value="Submit">
-                <div> reviewForm is {{reviewForm.$valid}}</div>
               </div>
             </form>
           </div>
@@ -104,6 +98,7 @@
   <script src="app.js"></script>
   <script src="panel.controller.js"></script>
   <script src="review.controller.js"></script>
+  <script src="product-title.directive.js"></script>
 </body>
 
 </html>

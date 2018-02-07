@@ -6,60 +6,11 @@
     function($http) {
       this.products = [];
 
-      $http.get("/products.json").then(resp => {
-        this.products = resp.data;
-      });
+      this.init = function() {
+        $http.get("/products.json").then(resp => {
+          this.products = resp.data;
+        });
+      };
     }
   ]);
-
-  var gems = [
-    {
-      name: "Dodecahedron",
-      price: 2.95,
-      description: "...",
-      canPurchase: true,
-      soldOut: false,
-      images: [
-        {
-          full: "abc.png",
-          thumb: "abc.png"
-        },
-        {
-          full: "abc.png",
-          thumb: "abc.png"
-        }
-      ],
-      reviews: [
-        {
-          stars: 5,
-          body: "I love this product!",
-          author: "joe@thomas.com"
-        }
-      ]
-    },
-    {
-      name: "Pentagonal Gem",
-      price: 5.95,
-      description: "...",
-      canPurchase: false,
-      soldOut: false,
-      images: [
-        {
-          full: "abc.png",
-          thumb: "abc.png"
-        },
-        {
-          full: "abc.png",
-          thumb: "abc.png"
-        }
-      ],
-      reviews: [
-        {
-          stars: 1,
-          body: "This product sucks",
-          author: "tim@hater.com"
-        }
-      ]
-    }
-  ];
 })();

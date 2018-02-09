@@ -49,9 +49,11 @@
             <option value="5">5 stars</option>
           </select>
 
-          <textarea name="body" class="form-control mt-2" ng-model="reviewCtrl.review.body" cols="30" rows="3" required></textarea>
+          <textarea name="body" placeholder="Write a short review of the product..." class="form-control mt-2" ng-model="reviewCtrl.review.body"
+            cols="30" rows="3" required></textarea>
           <label class="float-left">by:</label>
-          <input id="author" name="author" class="form-control" ng-model="reviewCtrl.review.author" type="email" ng-class="{'border-success': reviewForm.author.$valid, 'border-danger': reviewForm.author.$invalid && reviewForm.author.$dirty}"
+          <input id="author" name="author" placeholder="jimyDean@example.org" class="form-control" ng-model="reviewCtrl.review.author"
+            type="email" ng-class="{'border-success': reviewForm.author.$valid, 'border-danger': reviewForm.author.$invalid && reviewForm.author.$dirty}"
             required>
           <input class="btn btn-outline-primary mt-2 mb-2 float-right" type="submit" value="Submit">
         </div>

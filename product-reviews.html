@@ -1,0 +1,35 @@
+<h4>Reviews</h4>
+
+<blockquote class="blockquote mb-0 card-body" ng-repeat="review in product.reviews">
+  <div>
+    <img ng-src="{{i <= review.stars ? 'star_full.png' : 'star_empty.png'}}" height="40" width="40" class="ml-1 mb-2" ng-repeat="i in [1,2,3,4,5]">
+  </div>
+  {{review.body}}
+  <footer class="blockquote-footer">
+    <small class="text-muted">
+      <cite>by: {{review.author}} on {{review.createdOn | date}}</cite>
+    </small>
+  </footer>
+</blockquote>
+
+<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"
+  novalidate>
+  <p>Submit a Review</p>
+  <div class="container form-group">
+    <select class="form-control" ng-model="reviewCtrl.review.stars" required>
+      <option value="1">1 stars</option>
+      <option value="2">2 stars</option>
+      <option value="3">3 stars</option>
+      <option value="4">4 stars</option>
+      <option value="5">5 stars</option>
+    </select>
+
+    <textarea name="body" placeholder="Write a short review of the product..." class="form-control mt-2" ng-model="reviewCtrl.review.body"
+      cols="30" rows="3" required></textarea>
+    <label class="float-left">by:</label>
+    <input id="author" name="author" placeholder="jimyDean@example.org" class="form-control" ng-model="reviewCtrl.review.author"
+      type="email" ng-class="{'border-success': reviewForm.author.$valid, 'border-danger': reviewForm.author.$invalid && reviewForm.author.$dirty}"
+      required>
+    <input class="btn btn-outline-primary mt-2 mb-2 float-right" type="submit" value="Submit">
+  </div>
+</form>

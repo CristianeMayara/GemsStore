@@ -2,7 +2,8 @@
 
 <blockquote class="blockquote mb-0 card-body" ng-repeat="review in product.reviews">
   <div>
-    <img ng-src="{{i <= review.stars ? 'star_full.png' : 'star_empty.png'}}" height="40" width="40" class="ml-1 mb-2" ng-repeat="i in [1,2,3,4,5]">
+    <img ng-src="{{i <= review.stars ? '/content/img/star_full.png' : '/content/img/star_empty.png'}}" height="40" width="40"
+      class="ml-1 mb-2" ng-repeat="i in [1,2,3,4,5]">
   </div>
   {{review.body}}
   <footer class="blockquote-footer">

@@ -7,12 +7,12 @@
     "soldOut": false,
     "images": [
       {
-        "full": "abc.png",
-        "thumb": "abc.png"
+        "full": "/content/img/abc.png",
+        "thumb": "/content/img/abc.png"
       },
       {
-        "full": "abc.png",
-        "thumb": "abc.png"
+        "full": "/content/img/abc.png",
+        "thumb": "/content/img/abc.png"
       }
     ],
     "reviews": [
@@ -32,12 +32,12 @@
     "soldOut": false,
     "images": [
       {
-        "full": "abc.png",
-        "thumb": "abc.png"
+        "full": "/content/img/abc.png",
+        "thumb": "/content/img/abc.png"
       },
       {
-        "full": "abc.png",
-        "thumb": "abc.png"
+        "full": "/content/img/abc.png",
+        "thumb": "/content/img/abc.png"
       }
     ],
     "reviews": [

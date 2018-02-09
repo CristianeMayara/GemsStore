@@ -4,7 +4,7 @@
   app.directive("productDescription", function() {
     return {
       restrict: "EA",
-      templateUrl: "product-description.html"
+      templateUrl: "./view/product-description.html"
     };
   });
 })();

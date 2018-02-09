@@ -7,7 +7,7 @@
       this.products = [];
 
       this.init = function() {
-        $http.get("/products.json").then(resp => {
+        $http.get("/data/products.json").then(resp => {
           this.products = resp.data;
         });
       };

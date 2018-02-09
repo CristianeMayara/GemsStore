@@ -1,10 +1,10 @@
 (function() {
   var app = angular.module("store");
 
-  app.directive("productReviews", function() {
+  app.directive("productPanel", function() {
     return {
       restrict: "EA",
-      templateUrl: "product-reviews.html"
+      templateUrl: "./view/product-panel.html"
     };
   });
 })();

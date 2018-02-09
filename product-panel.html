@@ -12,10 +12,8 @@
   </ul>
 
   <div class="mt-2">
-    <div class="card" ng-show="panel.isSelected(1)">
-      <h4>Description</h4>
-      <p>{{product.description}}</p>
-    </div>
+
+    <product-description class="card" ng-show="panel.isSelected(1)"></product-description>
 
     <div class="card" ng-show="panel.isSelected(2)">
       <h4>Specifications</h4>
